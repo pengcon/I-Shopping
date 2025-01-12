@@ -7,17 +7,17 @@
 
     <fragment
         android:id="@+id/navigation_like"
-        android:name="com.example.ishopping.LikeFragment"
+        android:name="com.example.ishopping.ui.LikeFragment"
         android:label="LikeFragment"
         tools:layout="@layout/fragment_like" />
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.ishopping.HomeFragment"
+        android:name="com.example.ishopping.ui.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/navigation_cart"
-        android:name="com.example.ishopping.CartFragment"
+        android:name="com.example.ishopping.ui.CartFragment"
         android:label="CartFragment"
         tools:layout="@layout/fragment_cart" />
 </navigation>
