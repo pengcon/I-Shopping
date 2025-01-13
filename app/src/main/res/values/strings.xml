@@ -4,4 +4,15 @@
     <string name="label_home">Home</string>
     <string name="label_cart">Cart</string>
     <string name="label_like">Like</string>
+
+    <!--search -->
+    <string name="label_search">Search</string>
+    <string name="description_search_icon">Search Icon</string>
+    <string name="label_banner_discount_percent">30%</string>
+    <string name="label_banner_title">Today\'s Speacial!</string>
+    <string name="label_banner_description">Get discount for every \norder, only valid for today</string>
+    <string name="label_home_greeting">환영합니다. 👋</string>
+    <string name="label_home_title">I Shopping 입니다.</string>
+    <string name="label_home_special_offers">Special Offers</string>
+    <string name="label_home_suggestion">이런 가방은 어떠신가요?</string>
 </resources>
