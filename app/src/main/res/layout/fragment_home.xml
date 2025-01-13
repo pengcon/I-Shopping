@@ -6,33 +6,31 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/tv_home_greeting1"
+        android:id="@+id/tv_home_greeting"
+        style="@style/AppText.BodyLarge.GreyScale600"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
-        android:text="환영합니다. 👋"
-        android:textColor="@color/greyscale_600"
-        android:textSize="16sp"
+        android:text="@string/label_home_greeting"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
     <TextView
-        android:id="@+id/tv_home_greeting2"
+        android:id="@+id/tv_home_title"
+        style="@style/AppText.H5.GreyScale900.Bold"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="6dp"
         android:layout_marginEnd="24dp"
-        android:text="I Shopping 입니다."
-        android:textSize="20sp"
-        android:textStyle="bold"
+        android:text="@string/label_home_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_home_greeting1" />
+        app:layout_constraintTop_toBottomOf="@id/tv_home_greeting" />
 
     <com.example.ishopping.ui.SearchHomeLayout
         android:id="@+id/search_home_layout"
@@ -41,16 +39,15 @@
         android:layout_margin="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_home_greeting2" />
+        app:layout_constraintTop_toBottomOf="@id/tv_home_title" />
 
     <TextView
         android:id="@+id/tv_home_special_offers"
+        style="@style/AppText.H5.GreyScale900.Bold"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="24dp"
-        android:text="Special Offers"
-        android:textSize="20sp"
-        android:textStyle="bold"
+        android:text="@string/label_home_special_offers"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/search_home_layout" />
@@ -67,13 +64,12 @@
         app:layout_constraintTop_toBottomOf="@id/tv_home_special_offers" />
 
     <TextView
-        android:id="@+id/tv_greeting2"
+        android:id="@+id/tv_home_suggestion"
+        style="@style/AppText.H5.GreyScale900.Bold"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="24dp"
-        android:text="이런 가방은 어떠신가요?"
-        android:textSize="20sp"
-        android:textStyle="bold"
+        android:text="@string/label_home_suggestion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/banner_layout" />
