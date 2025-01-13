@@ -4,4 +4,8 @@
     <string name="label_home">Home</string>
     <string name="label_cart">Cart</string>
     <string name="label_like">Like</string>
+
+    <!--search -->
+    <string name="label_search">Search</string>
+    <string name="description_search_icon">Search Icon</string>
 </resources>
