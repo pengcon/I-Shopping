@@ -7,7 +7,7 @@
 
     <TextView
         android:id="@+id/tv_banner_discount_percent"
-        style="@style/AppText.H2.GreyScale900.Bold"
+        style="@style/AppTextH2.GreyScale900.Bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -18,7 +18,7 @@
 
     <TextView
         android:id="@+id/tv_banner_title"
-        style="@style/AppText.H6.GreyScale900.Bold"
+        style="@style/AppTextH6.GreyScale900.Bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -28,7 +28,7 @@
 
     <TextView
         android:id="@+id/tv_banner_description"
-        style="@style/AppText.BodySmall.GreyScale900.Medium"
+        style="@style/AppTextBodySmall.GreyScale900.Medium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"

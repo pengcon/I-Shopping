@@ -5,59 +5,59 @@
         <item name="android:fontFamily">@font/urbanist_family</item>
     </style>
 
-    <style name="AppText.BodySmall">
+    <style name="AppTextBodySmall">
         <item name="android:textSize">12sp</item>
     </style>
 
-    <style name="AppText.BodySmall.GreyScale900">
+    <style name="AppTextBodySmall.GreyScale900">
         <item name="android:textColor">@color/greyscale_900</item>
     </style>
 
-    <style name="AppText.BodySmall.GreyScale900.Medium">
+    <style name="AppTextBodySmall.GreyScale900.Medium">
         <item name="android:fontFamily">@font/urbanist_medium</item>
     </style>
 
-    <style name="AppText.BodyLarge">
+    <style name="AppTextBodyLarge">
         <item name="android:textSize">16sp</item>
     </style>
 
-    <style name="AppText.BodyLarge.GreyScale600">
+    <style name="AppTextBodyLarge.GreyScale600">
         <item name="android:textColor">@color/greyscale_600</item>
     </style>
 
-    <style name="AppText.H2">
+    <style name="AppTextH2">
         <item name="android:textSize">40sp</item>
     </style>
 
-    <style name="AppText.H2.GreyScale900">
+    <style name="AppTextH2.GreyScale900">
         <item name="android:textColor">@color/greyscale_900</item>
     </style>
 
-    <style name="AppText.H2.GreyScale900.Bold">
+    <style name="AppTextH2.GreyScale900.Bold">
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="AppText.H5">
+    <style name="AppTextH5">
         <item name="android:textSize">20sp</item>
     </style>
 
-    <style name="AppText.H5.GreyScale900">
+    <style name="AppTextH5.GreyScale900">
         <item name="android:textColor">@color/greyscale_900</item>
     </style>
 
-    <style name="AppText.H5.GreyScale900.Bold">
+    <style name="AppTextH5.GreyScale900.Bold">
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="AppText.H6">
+    <style name="AppTextH6">
         <item name="android:textSize">18sp</item>
     </style>
 
-    <style name="AppText.H6.GreyScale900">
+    <style name="AppTextH6.GreyScale900">
         <item name="android:textColor">@color/greyscale_900</item>
     </style>
 
-    <style name="AppText.H6.GreyScale900.Bold">
+    <style name="AppTextH6.GreyScale900.Bold">
         <item name="android:textStyle">bold</item>
     </style>
 
