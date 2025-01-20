@@ -16,4 +16,5 @@
     <string name="label_home_special_offers">Special Offers</string>
     <string name="label_home_suggestion">이런 가방은 어떠신가요?</string>
     <string name="description_shopping_item">검색 상품</string>
+    <string name="label_bag">가방</string>
 </resources>

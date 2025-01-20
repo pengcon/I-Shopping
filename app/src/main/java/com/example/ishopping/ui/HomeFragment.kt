@@ -1,12 +1,12 @@
 package com.example.ishopping.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import com.example.ishopping.R
 import com.example.ishopping.data.source.HomeRepository
 import com.example.ishopping.data.source.remote.ShoppingService
 import com.example.ishopping.databinding.FragmentHomeBinding
@@ -29,15 +29,20 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        lifecycleScope.launch {
-            val result = homeRepository.getShoppingItems("가방")
-            Log.d("HomeFragment", result.toString())
-        }
+        setLayout()
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun setLayout() {
+        val adapter = ShoppingItemAdapter()
+        binding.rvShoppingItemList.adapter = adapter
+        lifecycleScope.launch {
+            val result = homeRepository.getShoppingItems(getString(R.string.label_bag))
+            adapter.addItems(result)
+        }
     }
 }
