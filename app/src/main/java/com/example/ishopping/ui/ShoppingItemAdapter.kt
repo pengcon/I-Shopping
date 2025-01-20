@@ -1,14 +1,17 @@
 package com.example.ishopping.ui
 
+import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
+import androidx.core.text.HtmlCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.ishopping.R
 import com.example.ishopping.data.model.ShoppingItem
 import com.example.ishopping.databinding.ItemShoppingItemBinding
-import kotlin.math.PI
+import com.example.ishopping.util.StringUtils
+import java.text.NumberFormat
+import java.util.Locale
 
 class ShoppingItemAdapter : RecyclerView.Adapter<ShoppingItemAdapter.ShoppingItemViewHolder>() {
 
@@ -32,8 +35,15 @@ class ShoppingItemAdapter : RecyclerView.Adapter<ShoppingItemAdapter.ShoppingIte
         holder.bind(items[position])
     }
 
+    fun addItems(shoppingItems: List<ShoppingItem>) {
+        val startPosition = items.size
+        items.addAll(shoppingItems)
+        notifyItemRangeInserted(startPosition, shoppingItems.size)
+    }
+
     class ShoppingItemViewHolder(private val binding: ItemShoppingItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
         fun bind(shoppingItem: ShoppingItem) {
             with(binding) {
                 if (shoppingItem.image.isNotEmpty()) {
@@ -45,8 +55,9 @@ class ShoppingItemAdapter : RecyclerView.Adapter<ShoppingItemAdapter.ShoppingIte
                 } else {
                     ivShoppingItemImage.setImageResource(R.drawable.ic_image_not_supported)
                 }
-                binding.tvShoppingItemTitle.text = shoppingItem.title
-                binding.tvShoppingItemPrice.text = shoppingItem.lowPrice.toString()
+                Log.d("title", shoppingItem.title.toString())
+                tvShoppingItemTitle.text = StringUtils.stripHtml(shoppingItem.title)
+                tvShoppingItemPrice.text = StringUtils.formatPrice(shoppingItem.lowPrice)
             }
         }
 
