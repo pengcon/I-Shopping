@@ -8,10 +8,14 @@ import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Headers
 import retrofit2.http.Query
 
 interface ShoppingService {
-
+    @Headers(
+        "X-Naver-Client-Id: ${BuildConfig.NAVER_CLIENT_ID}",
+        "X-Naver-Client-Secret: ${BuildConfig.NAVER_CLIENT_SECRET}"
+    )
     @GET("v1/search/shop.json")
     suspend fun getShoppingItems(
         @Query("query") query: String,
@@ -26,14 +30,6 @@ interface ShoppingService {
                 level = HttpLoggingInterceptor.Level.BODY
             }
             val client = OkHttpClient.Builder()
-                .addInterceptor { chain ->
-                    val originalRequest = chain.request()
-                    val modifiedRequest = originalRequest.newBuilder()
-                        .addHeader("X-Naver-Client-Id", BuildConfig.NAVER_CLIENT_ID)
-                        .addHeader("X-Naver-Client-Secret", BuildConfig.NAVER_CLIENT_SECRET)
-                        .build()
-                    chain.proceed(modifiedRequest)
-                }
                 .addInterceptor(logger)
                 .build()
 
