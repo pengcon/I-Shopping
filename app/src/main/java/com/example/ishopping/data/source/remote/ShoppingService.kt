@@ -13,12 +13,12 @@ import retrofit2.http.Query
 interface ShoppingService {
 
     @GET("v1/search/shop.json")
-    fun getShoppingItems(
+    suspend fun getShoppingItems(
         @Query("query") query: String,
         @Query("display") display: Int = 10,
         @Query("start") start: Int = 1,
         @Query("sort") sort: String = "sim"
-    ): Call<ShoppingItemsResponse>
+    ): ShoppingItemsResponse
 
     companion object {
         fun create(): ShoppingService {
