@@ -1,4 +1,4 @@
-package com.example.ishopping.ui
+package com.example.ishopping.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,15 +8,19 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.example.ishopping.R
 import com.example.ishopping.data.source.HomeRepository
-import com.example.ishopping.data.source.remote.ShoppingService
 import com.example.ishopping.databinding.FragmentHomeBinding
+import com.example.ishopping.ui.home.ShoppingItemAdapter
+import dagger.hilt.android.AndroidEntryPoint
+import jakarta.inject.Inject
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
-    private val homeRepository = HomeRepository(ShoppingService.create())
+    @Inject
+    lateinit var  homeRepository : HomeRepository
 
     override fun onCreateView(
         inflater: LayoutInflater,

@@ -1,17 +1,14 @@
-package com.example.ishopping.ui
+package com.example.ishopping.ui.home
 
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.text.HtmlCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.ishopping.R
 import com.example.ishopping.data.model.ShoppingItem
 import com.example.ishopping.databinding.ItemShoppingItemBinding
 import com.example.ishopping.util.StringUtils
-import java.text.NumberFormat
-import java.util.Locale
 
 class ShoppingItemAdapter : RecyclerView.Adapter<ShoppingItemAdapter.ShoppingItemViewHolder>() {
 
