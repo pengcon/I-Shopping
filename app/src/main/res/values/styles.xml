@@ -64,4 +64,8 @@
     <style name="AppRoundedImage">
         <item name="cornerSize">32dp</item>
     </style>
+
+    <style name="ShoppingItemRoundedImage">
+        <item name="cornerSize">24dp</item>
+    </style>
 </resources>
