@@ -1,4 +1,4 @@
-package com.example.ishopping.ui.search
+package com.example.ishopping.ui.home
 
 import android.content.Context
 import android.util.AttributeSet
