@@ -82,4 +82,7 @@ dependencies {
     implementation(platform(libs.okhttp.bom))
     implementation(libs.okhttp)
     implementation(libs.okhttp.logging.interceptor)
+
+    //paging
+    implementation(libs.paging.runtime)
 }

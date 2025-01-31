@@ -10,4 +10,7 @@ class SearchLayout(context: Context, attrs: AttributeSet?) : ConstraintLayout(co
 
     private val binding: ViewSearchBinding =
         ViewSearchBinding.inflate(LayoutInflater.from(context), this, true)
+
+    val editTextSearchText = binding.etSearchText
+
 }

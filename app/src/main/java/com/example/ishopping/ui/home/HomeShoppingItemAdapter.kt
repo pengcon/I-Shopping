@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.ishopping.data.model.ShoppingItem
 import com.example.ishopping.databinding.ItemShoppingItemBinding
 
-class ShoppingItemAdapter : RecyclerView.Adapter<ShoppingItemAdapter.ShoppingItemViewHolder>() {
+class HomeShoppingItemAdapter : RecyclerView.Adapter<HomeShoppingItemAdapter.ShoppingItemViewHolder>() {
 
     private val items = mutableListOf<ShoppingItem>()
 
