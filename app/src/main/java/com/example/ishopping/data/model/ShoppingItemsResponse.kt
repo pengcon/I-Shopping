@@ -25,4 +25,23 @@ data class ShoppingItem(
     val category2: String,
     val category3: String,
     val category4: String?
-)
+) {
+    companion object{
+        fun placeholder() = ShoppingItem(
+            title = "",
+            link = "",
+            image = "",
+            lowPrice = "",
+            highPrice = null,
+            mallName = "",
+            productId = "",
+            productType = "",
+            brand = null,
+            maker = null,
+            category1 = "",
+            category2 = "",
+            category3 = "",
+            category4 = null
+        )
+    }
+}
