@@ -38,7 +38,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun setLayout() {
-        val adapter = ShoppingItemAdapter()
+        val adapter = HomeShoppingItemAdapter()
         binding.rvShoppingItemList.adapter = adapter
         viewModel.loadShoppingItems(getString(R.string.label_bag))
         viewModel.items.observe(viewLifecycleOwner) { shoppingItems ->
