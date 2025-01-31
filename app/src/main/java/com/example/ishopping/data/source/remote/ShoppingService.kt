@@ -15,7 +15,7 @@ interface ShoppingService {
     @GET("v1/search/shop.json")
     suspend fun getShoppingItems(
         @Query("query") query: String,
-        @Query("display") display: Int = 10,
+        @Query("display") display: Int = 20,
         @Query("start") start: Int = 1,
         @Query("sort") sort: String = "sim"
     ): ShoppingItemsResponse
