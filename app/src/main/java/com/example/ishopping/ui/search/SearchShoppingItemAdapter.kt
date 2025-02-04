@@ -6,7 +6,7 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ishopping.data.model.ShoppingItem
-import com.example.ishopping.databinding.ItemShoppingItemBinding
+import com.example.ishopping.databinding.ItemSearchShoppingItemBinding
 import com.example.ishopping.ui.search.SearchShoppingItemAdapter.SearchShoppingItemViewHolder
 
 class SearchShoppingItemAdapter(diffCallback: DiffUtil.ItemCallback<ShoppingItem>) :
@@ -31,7 +31,7 @@ class SearchShoppingItemAdapter(diffCallback: DiffUtil.ItemCallback<ShoppingItem
         }
     }
 
-    class SearchShoppingItemViewHolder(private val binding: ItemShoppingItemBinding) :
+    class SearchShoppingItemViewHolder(private val binding: ItemSearchShoppingItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(shoppingItem: ShoppingItem) {
@@ -40,7 +40,7 @@ class SearchShoppingItemAdapter(diffCallback: DiffUtil.ItemCallback<ShoppingItem
 
         companion object {
             fun from(parent: ViewGroup): SearchShoppingItemViewHolder {
-                val binding = ItemShoppingItemBinding.inflate(
+                val binding = ItemSearchShoppingItemBinding.inflate(
                     LayoutInflater.from(parent.context),
                     parent,
                     false
