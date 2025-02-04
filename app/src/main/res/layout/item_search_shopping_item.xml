@@ -8,6 +8,10 @@
         <variable
             name="shoppingItem"
             type="com.example.ishopping.data.model.ShoppingItem" />
+
+        <variable
+            name="vm"
+            type="com.example.ishopping.ui.search.SearchViewmodel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
