@@ -17,7 +17,4 @@ interface BookmarkItemDao {
 
     @Query("SELECT * FROM bookmark_items")
     fun getAll(): Flow<List<BookmarkItem>>
-
-    @Query("DELETE FROM bookmark_items")
-    suspend fun clearTable()
 }
