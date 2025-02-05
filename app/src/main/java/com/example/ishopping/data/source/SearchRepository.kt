@@ -24,20 +24,16 @@ class SearchRepository @Inject constructor(
         ).flow
     }
 
-    suspend fun getBookmarkShoppingItems(): Flow<List<BookmarkItem>> {
+     fun getBookmarkShoppingItems(): Flow<List<BookmarkItem>> {
         return dao.getAll()
     }
 
-    suspend fun insertBookmarkItem(item: BookmarkItem) {
+     fun insertBookmarkItem(item: BookmarkItem) {
         dao.insert(item)
     }
 
-    suspend fun deleteBookmarkItem(item: BookmarkItem) {
+     fun deleteBookmarkItem(item: BookmarkItem) {
         Log.d("deleteBookmarkItem", "deleteBookmarkItem: $item")
         dao.delete(item)
-    }
-
-    suspend fun drop() {
-        dao.clearTable()
     }
 }
