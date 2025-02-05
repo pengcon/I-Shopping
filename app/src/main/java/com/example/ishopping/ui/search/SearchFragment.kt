@@ -41,8 +41,8 @@ class SearchFragment : Fragment() {
     private fun setupRecyclerView() {
         binding.rvSearchedShoppingItemList.adapter = pagingAdapter
         viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.shoppingItems.collectLatest { pagingData ->
-                pagingAdapter.submitData(pagingData)
+            viewModel.itemUiModel.collectLatest { itemUiModels ->
+                pagingAdapter.submitData(itemUiModels)
             }
         }
     }
