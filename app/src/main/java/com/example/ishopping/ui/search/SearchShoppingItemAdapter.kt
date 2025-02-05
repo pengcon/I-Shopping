@@ -6,7 +6,6 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ishopping.data.model.ItemUiModel
-import com.example.ishopping.data.model.ShoppingItem
 import com.example.ishopping.databinding.ItemSearchShoppingItemBinding
 import com.example.ishopping.ui.search.SearchShoppingItemAdapter.SearchShoppingItemViewHolder
 
