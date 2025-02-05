@@ -5,12 +5,9 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "bookmark_items")
 data class BookmarkItem(
-    @PrimaryKey(autoGenerate = true) val id: Int = 0,
+    @PrimaryKey val productId: String,
     val title: String,
     val link: String,
     val image: String,
     val lowPrice: String,
-    val productId : String
-) {
-
-}
+)
