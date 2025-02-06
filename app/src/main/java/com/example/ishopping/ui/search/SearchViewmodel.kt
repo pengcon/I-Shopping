@@ -26,7 +26,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class SearchViewmodel @Inject constructor(private val searchRepository: SearchRepository) :
-    ViewModel() {
+    ViewModel(){
 
     private val _bookMarkedItems = MutableStateFlow<Set<String>>(emptySet())
     val bookmarkItems = _bookMarkedItems.asStateFlow()
@@ -52,7 +52,7 @@ class SearchViewmodel @Inject constructor(private val searchRepository: SearchRe
                     item = shoppingItem,
                     isBookmarked =  isBookmarked,
                     onBookmark = {
-                        toggleBookmark(shoppingItem,isBookmarked)
+
                     }
                 )
             }
@@ -67,7 +67,7 @@ class SearchViewmodel @Inject constructor(private val searchRepository: SearchRe
         }
     }
 
-    fun toggleBookmark(shoppingItem: ShoppingItem, isBookmarked: Boolean) {
+    fun onBookmarkButtonClick(shoppingItem: ShoppingItem, isBookmarked: Boolean) {
         if (isBookmarked) {
             removeBookmark(shoppingItem)
         } else {
