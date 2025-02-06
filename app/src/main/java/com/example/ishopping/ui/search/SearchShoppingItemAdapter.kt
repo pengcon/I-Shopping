@@ -5,16 +5,16 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.ishopping.data.model.ItemUiModel
+import com.example.ishopping.data.model.ShoppingItem
 import com.example.ishopping.databinding.ItemSearchShoppingItemBinding
 import com.example.ishopping.ui.search.SearchShoppingItemAdapter.SearchShoppingItemViewHolder
 import com.example.ishopping.util.BookmarkClickListener
 
 class SearchShoppingItemAdapter(
-    diffCallback: DiffUtil.ItemCallback<ItemUiModel>,
+    diffCallback: DiffUtil.ItemCallback<ShoppingItem>,
     private val listener: BookmarkClickListener
 ) :
-    PagingDataAdapter<ItemUiModel, SearchShoppingItemViewHolder>(diffCallback) {
+    PagingDataAdapter<ShoppingItem, SearchShoppingItemViewHolder>(diffCallback) {
 
 
     override fun onCreateViewHolder(
@@ -28,11 +28,11 @@ class SearchShoppingItemAdapter(
         holder: SearchShoppingItemViewHolder,
         position: Int
     ) {
-        val itemUiModel = getItem(position)
-        itemUiModel?.let { item ->
+        val shoppingItem = getItem(position)
+        shoppingItem?.let { item ->
             holder.bind(item)
         } ?: run {
-            holder.bind(ItemUiModel.placeholder())
+            holder.bind(ShoppingItem.placeholder())
         }
     }
 
@@ -41,8 +41,8 @@ class SearchShoppingItemAdapter(
         private val listener: BookmarkClickListener
     ) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(itemUiModel: ItemUiModel) {
-            binding.itemUiModel = itemUiModel
+        fun bind(shoppingItem: ShoppingItem) {
+            binding.shoppingItem = shoppingItem
             binding.listener = listener
         }
 

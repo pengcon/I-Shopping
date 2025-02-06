@@ -6,8 +6,7 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import androidx.paging.map
-import com.example.ishopping.data.model.BookmarkItem
-import com.example.ishopping.data.model.ItemUiModel
+import com.example.ishopping.data.model.Item
 import com.example.ishopping.data.model.ShoppingItem
 import com.example.ishopping.data.source.SearchRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -34,8 +33,16 @@ class SearchViewmodel @Inject constructor(private val searchRepository: SearchRe
     private val _searchText = MutableStateFlow("")
     val searchText = _searchText.asStateFlow()
 
+    init {
+        viewModelScope.launch {
+            searchRepository.getBookmarkShoppingItems().collect { items ->
+                _bookMarkedItems.value = items.map { it.id }.toSet()
+            }
+        }
+    }
+
     @OptIn(FlowPreview::class, ExperimentalCoroutinesApi::class)
-    val shoppingItems: Flow<PagingData<ShoppingItem>> =
+    val items: Flow<PagingData<Item>> =
         _searchText
             .debounce(500L)
             .filter { it.isNotEmpty() }
@@ -44,61 +51,39 @@ class SearchViewmodel @Inject constructor(private val searchRepository: SearchRe
             }
             .cachedIn(viewModelScope)
 
-    val itemUiModel: Flow<PagingData<ItemUiModel>> = shoppingItems
+    val shoppingItems: Flow<PagingData<ShoppingItem>> = items
         .combine(bookmarkItems) { pagingData, bookmarkedIds ->
-            pagingData.map { shoppingItem ->
-                val isBookmarked = bookmarkedIds.contains(shoppingItem.productId)
-                ItemUiModel(
-                    item = shoppingItem,
-                    isBookmarked =  isBookmarked,
-                    onBookmark = {
-
-                    }
+            pagingData.map { item ->
+                val isBookmarked = bookmarkedIds.contains(item.productId)
+                ShoppingItem(
+                    id = item.productId,
+                    item = item,
+                    isBookmarked = isBookmarked
                 )
             }
         }
         .cachedIn(viewModelScope)
 
-    init {
-        viewModelScope.launch {
-            searchRepository.getBookmarkShoppingItems().collect { items ->
-                _bookMarkedItems.value = items.map { it.productId }.toSet()
-            }
-        }
-    }
 
-    fun onBookmarkButtonClick(shoppingItem: ShoppingItem, isBookmarked: Boolean) {
-        if (isBookmarked) {
+    fun onBookmarkButtonClick(shoppingItem: ShoppingItem)  {
+        if (shoppingItem.isBookmarked) {
             removeBookmark(shoppingItem)
         } else {
             addBookmark(shoppingItem)
         }
     }
 
-    fun addBookmark(item: ShoppingItem) {
+    fun addBookmark(shoppingItem: ShoppingItem) {
         viewModelScope.launch(Dispatchers.IO) {
-            val bookmarkItem = BookmarkItem(
-                title = item.title,
-                link = item.link,
-                image = item.image,
-                lowPrice = item.lowPrice,
-                productId = item.productId
-            )
-            searchRepository.insertBookmarkItem(bookmarkItem)
+
+            searchRepository.insertBookmarkItem(shoppingItem)
         }
     }
 
-    fun removeBookmark(item: ShoppingItem) {
+    fun removeBookmark(shoppingItem: ShoppingItem) {
         viewModelScope.launch(Dispatchers.IO) {
-            val bookmarkItem = BookmarkItem(
-                title = item.title,
-                link = item.link,
-                image = item.image,
-                lowPrice = item.lowPrice,
-                productId = item.productId
-            )
-            Log.d("removeBookmark", "removeBookmark: $bookmarkItem")
-            searchRepository.deleteBookmarkItem(bookmarkItem)
+            Log.d("removeBookmark", "removeBookmark: $shoppingItem")
+            searchRepository.deleteBookmarkItem(shoppingItem)
         }
     }
 

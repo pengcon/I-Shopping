@@ -44,8 +44,8 @@ class SearchFragment : Fragment(),BookmarkClickListener {
     private fun setupRecyclerView() {
         binding.rvSearchedShoppingItemList.adapter = pagingAdapter
         viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.itemUiModel.collectLatest { itemUiModels ->
-                pagingAdapter.submitData(itemUiModels)
+            viewModel.shoppingItems.collectLatest { shoppingItems ->
+                pagingAdapter.submitData(shoppingItems)
             }
         }
     }
@@ -61,8 +61,8 @@ class SearchFragment : Fragment(),BookmarkClickListener {
         }
     }
 
-    override fun onBookmarkButtonClick(shoppingItem: ShoppingItem, isBookmarked: Boolean) {
-        viewModel.onBookmarkButtonClick(shoppingItem, isBookmarked)
+    override fun onBookmarkButtonClick(shoppingItem: ShoppingItem) {
+        viewModel.onBookmarkButtonClick(shoppingItem)
     }
 
     override fun onDestroyView() {
