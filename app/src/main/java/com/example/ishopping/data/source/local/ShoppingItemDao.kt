@@ -8,7 +8,7 @@ import com.example.ishopping.data.model.ShoppingItem
 import kotlinx.coroutines.flow.Flow
 
 @Dao
-interface BookmarkItemDao {
+interface ShoppingItemDao {
     @Insert
     fun insert(shoppingItem: ShoppingItem)
 
