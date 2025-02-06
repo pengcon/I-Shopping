@@ -6,11 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.flowWithLifecycle
+import androidx.lifecycle.lifecycleScope
 import com.example.ishopping.data.model.ShoppingItem
 import com.example.ishopping.databinding.FragmentBookmarkBinding
 import com.example.ishopping.util.BookmarkClickListener
 import com.example.ishopping.util.comparator.ShoppingItemComparator
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class BookmarkFragment : Fragment(), BookmarkClickListener {
@@ -31,10 +35,26 @@ class BookmarkFragment : Fragment(), BookmarkClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.lifecycleOwner = viewLifecycleOwner
+        setupRecyclerView()
+    }
+
+    private fun setupRecyclerView() {
+        binding.rvSearchedShoppingItemList.adapter = adapter
+        viewModel.loadBookmarkedItems()
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.bookmarkedItems.flowWithLifecycle(
+                viewLifecycleOwner.lifecycle,
+                Lifecycle.State.STARTED
+            )
+                .collect { shoppingItems ->
+                    adapter.submitList(shoppingItems)
+                }
+        }
     }
 
     override fun onBookmarkButtonClick(shoppingItem: ShoppingItem) {
-
+        viewModel.bookmarkButtonClick(shoppingItem)
     }
 
     override fun onDestroyView() {
