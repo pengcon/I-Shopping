@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/navigation_like"
-        android:name="com.example.ishopping.ui.like.LikeFragment"
+        android:name="com.example.ishopping.ui.bookmark.BookMarkFragment"
         android:label="LikeFragment"
-        tools:layout="@layout/fragment_like" />
+        tools:layout="@layout/fragment_bookmark" />
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.example.ishopping.ui.home.HomeFragment"

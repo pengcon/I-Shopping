@@ -38,7 +38,7 @@ class HomeShoppingItemAdapter : RecyclerView.Adapter<HomeShoppingItemAdapter.Sho
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: Item) {
-            binding.shoppingItem = item
+            binding.item = item
         }
 
         companion object {
