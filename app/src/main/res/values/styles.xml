@@ -37,6 +37,18 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="AppTextH4">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="AppTextH4.GreyScale900">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="AppTextH4.GreyScale900.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <style name="AppTextH5">
         <item name="android:textSize">20sp</item>
     </style>
