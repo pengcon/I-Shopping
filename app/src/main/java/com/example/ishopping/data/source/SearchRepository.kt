@@ -1,12 +1,11 @@
 package com.example.ishopping.data.source
 
-import android.util.Log
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
+import com.example.ishopping.data.model.Item
 import com.example.ishopping.data.model.ShoppingItem
 import com.example.ishopping.data.source.local.ShoppingItemDao
-import com.example.ishopping.data.model.Item
 import com.example.ishopping.data.source.remote.ShoppingService
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
@@ -34,8 +33,5 @@ class SearchRepository @Inject constructor(
 
      fun deleteBookmarkItem(item: ShoppingItem) {
         dao.delete(item)
-    }
-    fun deleteAllBookmarkItems() {
-        dao.deleteAllBookmarkItems()
     }
 }
