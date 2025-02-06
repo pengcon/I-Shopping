@@ -5,7 +5,7 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.example.ishopping.data.model.ShoppingItem
-import com.example.ishopping.data.source.local.BookmarkItemDao
+import com.example.ishopping.data.source.local.ShoppingItemDao
 import com.example.ishopping.data.model.Item
 import com.example.ishopping.data.source.remote.ShoppingService
 import kotlinx.coroutines.flow.Flow
@@ -13,7 +13,7 @@ import javax.inject.Inject
 
 class SearchRepository @Inject constructor(
     private val shoppingService: ShoppingService,
-    private val dao: BookmarkItemDao
+    private val dao: ShoppingItemDao
 ) {
     fun getShoppingItems(query: String): Flow<PagingData<Item>> {
         return Pager(
@@ -33,7 +33,6 @@ class SearchRepository @Inject constructor(
     }
 
      fun deleteBookmarkItem(item: ShoppingItem) {
-        Log.d("deleteBookmarkItem", "deleteBookmarkItem: $item")
         dao.delete(item)
     }
     fun deleteAllBookmarkItems() {
