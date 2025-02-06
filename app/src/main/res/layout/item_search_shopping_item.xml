@@ -8,6 +8,9 @@
         <variable
             name="itemUiModel"
             type="com.example.ishopping.data.model.ItemUiModel" />
+        <variable
+            name="listener"
+            type="com.example.ishopping.util.BookmarkClickListener" />
 
     </data>
 
@@ -40,6 +43,7 @@
             android:layout_marginEnd="16dp"
             android:background="@drawable/selector_item_like_icon"
             onBookmarkClick="@{itemUiModel.onBookmark}"
+            android:onClick="@{()-> listener.onBookmarkButtonClick(itemUiModel.item,itemUiModel.isBookmarked)}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
