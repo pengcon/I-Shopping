@@ -16,7 +16,7 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
     private val viewModel by viewModels<HomeShoppingItemViewmodel>()
-
+    private val adapter = HomeShoppingItemAdapter()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -38,7 +38,6 @@ class HomeFragment : Fragment() {
     }
 
     private fun setLayout() {
-        val adapter = HomeShoppingItemAdapter()
         binding.rvShoppingItemList.adapter = adapter
         viewModel.loadShoppingItems(getString(R.string.label_bag))
         viewModel.items.observe(viewLifecycleOwner) { shoppingItems ->
