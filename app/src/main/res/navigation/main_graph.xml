@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_like"
-        android:name="com.example.ishopping.ui.bookmark.BookMarkFragment"
+        android:name="com.example.ishopping.ui.bookmark.BookmarkFragment"
         android:label="LikeFragment"
         tools:layout="@layout/fragment_bookmark" />
     <fragment
