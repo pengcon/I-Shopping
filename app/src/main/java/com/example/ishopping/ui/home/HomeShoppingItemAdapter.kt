@@ -8,7 +8,7 @@ import com.example.ishopping.databinding.ItemShoppingItemBinding
 
 class HomeShoppingItemAdapter : RecyclerView.Adapter<HomeShoppingItemAdapter.ShoppingItemViewHolder>() {
 
-    private val items = mutableListOf<Item>()
+    private val homeItems = mutableListOf<Item>()
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -18,19 +18,19 @@ class HomeShoppingItemAdapter : RecyclerView.Adapter<HomeShoppingItemAdapter.Sho
     }
 
     override fun getItemCount(): Int {
-        return items.size
+        return homeItems.size
     }
 
     override fun onBindViewHolder(
         holder: ShoppingItemViewHolder,
         position: Int
     ) {
-        holder.bind(items[position])
+        holder.bind(homeItems[position])
     }
 
     fun addItems(items: List<Item>) {
-        val startPosition = this@HomeShoppingItemAdapter.items.size
-        this@HomeShoppingItemAdapter.items.addAll(items)
+        val startPosition = items.size
+        homeItems.addAll(items)
         notifyItemRangeInserted(startPosition, items.size)
     }
 
