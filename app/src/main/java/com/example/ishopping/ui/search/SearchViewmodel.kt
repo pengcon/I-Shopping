@@ -1,6 +1,5 @@
 package com.example.ishopping.ui.search
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
@@ -75,14 +74,12 @@ class SearchViewmodel @Inject constructor(private val searchRepository: SearchRe
 
     fun addBookmark(shoppingItem: ShoppingItem) {
         viewModelScope.launch(Dispatchers.IO) {
-
-            searchRepository.insertBookmarkItem(shoppingItem)
+            searchRepository.insertBookmarkItem(shoppingItem.copy(isBookmarked = true))
         }
     }
 
     fun removeBookmark(shoppingItem: ShoppingItem) {
         viewModelScope.launch(Dispatchers.IO) {
-            Log.d("removeBookmark", "removeBookmark: $shoppingItem")
             searchRepository.deleteBookmarkItem(shoppingItem)
         }
     }
