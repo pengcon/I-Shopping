@@ -3,12 +3,12 @@ package com.example.ishopping.ui.home
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.ishopping.data.model.ShoppingItem
+import com.example.ishopping.data.model.Item
 import com.example.ishopping.databinding.ItemShoppingItemBinding
 
 class HomeShoppingItemAdapter : RecyclerView.Adapter<HomeShoppingItemAdapter.ShoppingItemViewHolder>() {
 
-    private val items = mutableListOf<ShoppingItem>()
+    private val items = mutableListOf<Item>()
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -28,17 +28,17 @@ class HomeShoppingItemAdapter : RecyclerView.Adapter<HomeShoppingItemAdapter.Sho
         holder.bind(items[position])
     }
 
-    fun addItems(shoppingItems: List<ShoppingItem>) {
-        val startPosition = items.size
-        items.addAll(shoppingItems)
-        notifyItemRangeInserted(startPosition, shoppingItems.size)
+    fun addItems(items: List<Item>) {
+        val startPosition = this@HomeShoppingItemAdapter.items.size
+        this@HomeShoppingItemAdapter.items.addAll(items)
+        notifyItemRangeInserted(startPosition, items.size)
     }
 
     class ShoppingItemViewHolder(private val binding: ItemShoppingItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(shoppingItem: ShoppingItem) {
-            binding.shoppingItem = shoppingItem
+        fun bind(item: Item) {
+            binding.shoppingItem = item
         }
 
         companion object {

@@ -6,8 +6,8 @@
     <data>
 
         <variable
-            name="shoppingItem"
-            type="com.example.ishopping.data.model.ShoppingItem" />
+            name="item"
+            type="com.example.ishopping.data.model.Item" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,7 +18,7 @@
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/iv_shopping_item_image"
-            imageUrl="@{shoppingItem.image}"
+            imageUrl="@{item.image}"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/description_shopping_item"
@@ -43,7 +43,7 @@
         <TextView
             android:id="@+id/tv_shopping_item_title"
             style="@style/AppTextH6.GreyScale900.Bold"
-            title="@{shoppingItem.title}"
+            title="@{item.title}"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -57,7 +57,7 @@
         <TextView
             android:id="@+id/tv_shopping_item_price"
             style="@style/AppTextH6.GreyScale900.Bold"
-            price="@{shoppingItem.lowPrice}"
+            price="@{item.lowPrice}"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"

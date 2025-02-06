@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.ishopping.data.model.ShoppingItem
+import com.example.ishopping.data.model.Item
 import com.example.ishopping.data.source.HomeRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -14,8 +14,8 @@ import javax.inject.Inject
 class HomeShoppingItemViewmodel @Inject constructor(private val repository: HomeRepository) :
     ViewModel() {
 
-    private val _items = MutableLiveData<List<ShoppingItem>>()
-    val items: LiveData<List<ShoppingItem>> = _items
+    private val _items = MutableLiveData<List<Item>>()
+    val items: LiveData<List<Item>> = _items
 
     fun loadShoppingItems(query: String) {
         viewModelScope.launch {

@@ -1,7 +1,7 @@
 package com.example.ishopping.data.source.remote
 
 import com.example.ishopping.BuildConfig
-import com.example.ishopping.data.model.ShoppingItemsResponse
+import com.example.ishopping.data.model.ItemsResponse
 import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.Query
@@ -18,5 +18,5 @@ interface ShoppingService {
         @Query("display") display: Int = 20,
         @Query("start") start: Int = 1,
         @Query("sort") sort: String = "sim"
-    ): ShoppingItemsResponse
+    ): ItemsResponse
 }
