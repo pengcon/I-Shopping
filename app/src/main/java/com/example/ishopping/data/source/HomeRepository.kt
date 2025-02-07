@@ -5,6 +5,7 @@ import com.example.ishopping.data.model.ShoppingItem
 import com.example.ishopping.data.model.toShoppingItem
 import com.example.ishopping.data.source.local.ShoppingItemDao
 import com.example.ishopping.data.source.remote.ShoppingService
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class HomeRepository @Inject constructor(
@@ -15,6 +16,9 @@ class HomeRepository @Inject constructor(
         return shoppingService.getShoppingItems(query).items.map {
             it.toShoppingItem()
         }
+    }
+    fun getBookmarkShoppingItems(): Flow<List<ShoppingItem>> {
+        return dao.getAll()
     }
 
     fun insertBookmarkItem(item: ShoppingItem) {
