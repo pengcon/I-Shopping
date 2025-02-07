@@ -26,7 +26,7 @@ data class Item(
     val category3: String,
     val category4: String?
 ) {
-    companion object{
+    companion object {
         fun placeholder() = Item(
             title = "",
             link = "",
@@ -45,8 +45,9 @@ data class Item(
         )
     }
 }
+
 fun Item.toShoppingItem() = ShoppingItem(
-      id=productId,
-      item = this,
-      isBookmarked = false
+    id = this.productId,
+    item = this,
+    isBookmarked = false
 )
