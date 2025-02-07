@@ -9,22 +9,22 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import com.example.ishopping.data.model.ShoppingItem
 import com.example.ishopping.databinding.FragmentSearchBinding
 import com.example.ishopping.ui.extensions.textChanges
-import com.example.ishopping.util.BookmarkClickListener
 import com.example.ishopping.util.comparator.ShoppingItemComparator
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class SearchFragment : Fragment(), BookmarkClickListener {
+class SearchFragment : Fragment() {
     private var _binding: FragmentSearchBinding? = null
     private val binding get() = _binding!!
     private val viewModel by viewModels<SearchViewmodel>()
     private val pagingAdapter =
-        SearchShoppingItemAdapter(ShoppingItemComparator, this)
+        SearchShoppingItemAdapter(ShoppingItemComparator){
+            viewModel.onBookmarkButtonClick(it)
+        }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -63,10 +63,6 @@ class SearchFragment : Fragment(), BookmarkClickListener {
                     }
             }
         }
-    }
-
-    override fun onBookmarkButtonClick(shoppingItem: ShoppingItem) {
-        viewModel.onBookmarkButtonClick(shoppingItem)
     }
 
     override fun onDestroyView() {

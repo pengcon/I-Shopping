@@ -9,20 +9,20 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
-import com.example.ishopping.data.model.ShoppingItem
 import com.example.ishopping.databinding.FragmentBookmarkBinding
-import com.example.ishopping.util.BookmarkClickListener
 import com.example.ishopping.util.comparator.ShoppingItemComparator
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class BookmarkFragment : Fragment(), BookmarkClickListener {
+class BookmarkFragment : Fragment() {
     private var _binding: FragmentBookmarkBinding? = null
     private val binding get() = _binding!!
     private val viewModel by viewModels<BookmarkViewmodel>()
     private val adapter =
-        BookmarkShoppingItemAdapter(ShoppingItemComparator, this)
+        BookmarkShoppingItemAdapter(ShoppingItemComparator){
+            viewModel.bookmarkButtonClick(it)
+        }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -51,10 +51,6 @@ class BookmarkFragment : Fragment(), BookmarkClickListener {
                     adapter.submitList(shoppingItems)
                 }
         }
-    }
-
-    override fun onBookmarkButtonClick(shoppingItem: ShoppingItem) {
-        viewModel.bookmarkButtonClick(shoppingItem)
     }
 
     override fun onDestroyView() {
