@@ -3,12 +3,14 @@ package com.example.ishopping.ui.home
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.ishopping.data.model.Item
-import com.example.ishopping.databinding.ItemShoppingItemBinding
+import com.example.ishopping.data.model.ShoppingItem
+import com.example.ishopping.databinding.ItemSearchShoppingItemBinding
+import com.example.ishopping.util.BookmarkClickListener
 
-class HomeShoppingItemAdapter : RecyclerView.Adapter<HomeShoppingItemAdapter.ShoppingItemViewHolder>() {
+class HomeShoppingItemAdapter(private val listener: BookmarkClickListener) :
+    RecyclerView.Adapter<HomeShoppingItemAdapter.ShoppingItemViewHolder>() {
 
-    private val homeItems = mutableListOf<Item>()
+    private val homeItems = mutableListOf<ShoppingItem>()
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -25,25 +27,26 @@ class HomeShoppingItemAdapter : RecyclerView.Adapter<HomeShoppingItemAdapter.Sho
         holder: ShoppingItemViewHolder,
         position: Int
     ) {
-        holder.bind(homeItems[position])
+        holder.bind(homeItems[position], listener)
     }
 
-    fun addItems(items: List<Item>) {
+    fun addItems(items: List<ShoppingItem>) {
         val startPosition = items.size
         homeItems.addAll(items)
         notifyItemRangeInserted(startPosition, items.size)
     }
 
-    class ShoppingItemViewHolder(private val binding: ItemShoppingItemBinding) :
+    class ShoppingItemViewHolder(private val binding: ItemSearchShoppingItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: Item) {
-            binding.item = item
+        fun bind(shoppingItem: ShoppingItem, listener: BookmarkClickListener) {
+            binding.shoppingItem = shoppingItem
+            binding.listener = listener
         }
 
         companion object {
             fun from(parent: ViewGroup): ShoppingItemViewHolder {
-                val binding = ItemShoppingItemBinding.inflate(
+                val binding = ItemSearchShoppingItemBinding.inflate(
                     LayoutInflater.from(parent.context),
                     parent,
                     false
