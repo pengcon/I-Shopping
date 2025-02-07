@@ -1,6 +1,5 @@
 package com.example.ishopping.data.source
 
-import com.example.ishopping.data.model.Item
 import com.example.ishopping.data.model.ShoppingItem
 import com.example.ishopping.data.model.toShoppingItem
 import com.example.ishopping.data.source.local.ShoppingItemDao
