@@ -8,7 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.ishopping.R
+import com.example.ishopping.data.model.ShoppingItem
 import com.example.ishopping.databinding.FragmentHomeBinding
+import com.example.ishopping.util.BookmarkClickListener
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -16,7 +18,10 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
     private val viewModel by viewModels<HomeShoppingItemViewmodel>()
-    private val adapter = HomeShoppingItemAdapter()
+    private val adapter = HomeShoppingItemAdapter { shoppingItem ->
+        viewModel.onBookmarkButtonClick(shoppingItem)
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
