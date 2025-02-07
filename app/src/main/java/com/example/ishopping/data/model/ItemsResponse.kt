@@ -45,3 +45,8 @@ data class Item(
         )
     }
 }
+fun Item.toShoppingItem() = ShoppingItem(
+      id=productId,
+      item = this,
+      isBookmarked = false
+)
