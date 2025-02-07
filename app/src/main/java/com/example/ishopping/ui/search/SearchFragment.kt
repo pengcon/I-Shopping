@@ -11,6 +11,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.example.ishopping.databinding.FragmentSearchBinding
 import com.example.ishopping.ui.extensions.textChanges
+import com.example.ishopping.util.comparator.ShoppingItemComparator
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -20,7 +21,10 @@ class SearchFragment : Fragment() {
     private var _binding: FragmentSearchBinding? = null
     private val binding get() = _binding!!
     private val viewModel by viewModels<SearchViewmodel>()
-    private val pagingAdapter = SearchShoppingItemAdapter(SearchShoppingItemComparator)
+    private val pagingAdapter =
+        SearchShoppingItemAdapter(ShoppingItemComparator){
+            viewModel.onBookmarkButtonClick(it)
+        }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,6 +38,7 @@ class SearchFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.lifecycleOwner = viewLifecycleOwner
         setupRecyclerView()
         observeSearchTextChanges()
     }
@@ -41,8 +46,10 @@ class SearchFragment : Fragment() {
     private fun setupRecyclerView() {
         binding.rvSearchedShoppingItemList.adapter = pagingAdapter
         viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.shoppingItems.collectLatest { pagingData ->
-                pagingAdapter.submitData(pagingData)
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.shoppingItems.collectLatest { shoppingItems ->
+                    pagingAdapter.submitData(shoppingItems)
+                }
             }
         }
     }

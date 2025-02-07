@@ -6,16 +6,24 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.example.ishopping.R
 import com.example.ishopping.databinding.FragmentHomeBinding
+import com.example.ishopping.util.comparator.ShoppingItemComparator
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
     private val viewModel by viewModels<HomeShoppingItemViewmodel>()
+    private val adapter = HomeShoppingItemAdapter(ShoppingItemComparator) { shoppingItem ->
+        viewModel.onBookmarkButtonClick(shoppingItem)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,12 +46,16 @@ class HomeFragment : Fragment() {
     }
 
     private fun setLayout() {
-        val adapter = HomeShoppingItemAdapter()
         binding.rvShoppingItemList.adapter = adapter
         viewModel.loadShoppingItems(getString(R.string.label_bag))
-        viewModel.items.observe(viewLifecycleOwner) { shoppingItems ->
-            adapter.addItems(shoppingItems)
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.items.collect { shoppingItems ->
+                    adapter.submitList(shoppingItems)
+                }
+            }
         }
+
         binding.searchHomeLayout.setOnClickListener {
             findNavController().navigate(R.id.action_navigation_home_to_searchFragment)
         }

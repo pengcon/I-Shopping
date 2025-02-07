@@ -2,15 +2,15 @@ package com.example.ishopping.data.model
 
 import com.google.gson.annotations.SerializedName
 
-data class ShoppingItemsResponse(
+data class ItemsResponse(
     val lastBuildDate: String,
     val total: Int,
     val start: Int,
     val display: Int,
-    val items: List<ShoppingItem>
+    val items: List<Item>
 )
 
-data class ShoppingItem(
+data class Item(
     val title: String,
     val link: String,
     val image: String,
@@ -26,8 +26,8 @@ data class ShoppingItem(
     val category3: String,
     val category4: String?
 ) {
-    companion object{
-        fun placeholder() = ShoppingItem(
+    companion object {
+        fun placeholder() = Item(
             title = "",
             link = "",
             image = "",
@@ -45,3 +45,9 @@ data class ShoppingItem(
         )
     }
 }
+
+fun Item.toShoppingItem() = ShoppingItem(
+    id = this.productId,
+    item = this,
+    isBookmarked = false
+)

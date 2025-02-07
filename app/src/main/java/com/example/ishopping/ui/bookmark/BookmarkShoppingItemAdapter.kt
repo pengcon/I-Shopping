@@ -1,4 +1,4 @@
-package com.example.ishopping.ui.home
+package com.example.ishopping.ui.bookmark
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -9,18 +9,18 @@ import com.example.ishopping.data.model.ShoppingItem
 import com.example.ishopping.databinding.ItemSearchShoppingItemBinding
 import com.example.ishopping.util.BookmarkClickListener
 
-class HomeShoppingItemAdapter(
+class BookmarkShoppingItemAdapter(
     diffCallback: DiffUtil.ItemCallback<ShoppingItem>,
     private val listener: BookmarkClickListener
-) : ListAdapter<ShoppingItem, HomeShoppingItemViewHolder>(diffCallback) {
+) : ListAdapter<ShoppingItem, BookmarkShoppingItemViewHolder>(diffCallback) {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): HomeShoppingItemViewHolder {
-        return HomeShoppingItemViewHolder.from(parent, listener)
+    ): BookmarkShoppingItemViewHolder {
+        return BookmarkShoppingItemViewHolder.from(parent, listener)
     }
 
-    override fun onBindViewHolder(holder: HomeShoppingItemViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: BookmarkShoppingItemViewHolder, position: Int) {
         val shoppingItem = getItem(position)
         shoppingItem?.let { item ->
             holder.bind(item)
@@ -30,7 +30,7 @@ class HomeShoppingItemAdapter(
     }
 }
 
-class HomeShoppingItemViewHolder(
+class BookmarkShoppingItemViewHolder(
     private val binding: ItemSearchShoppingItemBinding,
     private val listener: BookmarkClickListener
 ) : RecyclerView.ViewHolder(binding.root) {
@@ -43,13 +43,13 @@ class HomeShoppingItemViewHolder(
         fun from(
             parent: ViewGroup,
             listener: BookmarkClickListener
-        ): HomeShoppingItemViewHolder {
+        ): BookmarkShoppingItemViewHolder {
             val binding = ItemSearchShoppingItemBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
             )
-            return HomeShoppingItemViewHolder(binding, listener)
+            return BookmarkShoppingItemViewHolder(binding, listener)
         }
     }
 }
