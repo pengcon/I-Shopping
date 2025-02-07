@@ -1,13 +1,14 @@
 package com.example.ishopping.ui.home
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.ishopping.data.model.ShoppingItem
 import com.example.ishopping.data.source.HomeRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -15,8 +16,22 @@ import javax.inject.Inject
 class HomeShoppingItemViewmodel @Inject constructor(private val repository: HomeRepository) :
     ViewModel() {
 
-    private val _items = MutableLiveData<List<ShoppingItem>>()
-    val items: LiveData<List<ShoppingItem>> = _items
+    private val _items = MutableStateFlow<List<ShoppingItem>>(emptyList())
+    val items = _items.asStateFlow()
+
+    init {
+        viewModelScope.launch {
+            combine(
+                repository.getBookmarkShoppingItems(),
+                _items
+            ) { bookmarkedItems, shoppingItems ->
+                val bookmarkedIds = bookmarkedItems.map { it.id }.toSet()
+                shoppingItems.map { it.copy(isBookmarked = it.id in bookmarkedIds) }
+            }.collect { updatedItems ->
+                _items.value = updatedItems
+            }
+        }
+    }
 
     fun loadShoppingItems(query: String) {
         viewModelScope.launch {
@@ -25,7 +40,7 @@ class HomeShoppingItemViewmodel @Inject constructor(private val repository: Home
         }
     }
 
-    fun onBookmarkButtonClick(shoppingItem: ShoppingItem)  {
+    fun onBookmarkButtonClick(shoppingItem: ShoppingItem) {
         if (shoppingItem.isBookmarked) {
             removeBookmark(shoppingItem)
         } else {
