@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="12dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_shopping_item_image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/greyscale_600"
+            android:contentDescription="@string/description_shimmer_shopping_item"
+            android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="w, 1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="@style/ShoppingItemRoundedImage"
+            tools:background="@color/greyscale_600" />
+
+        <TextView
+            android:id="@+id/tv_shopping_item_title"
+            style="@style/AppTextH6.GreyScale900.Bold"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@color/greyscale_600"
+            android:ellipsize="end"
+            android:maxLines="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_shopping_item_image" />
+
+        <TextView
+            android:id="@+id/tv_shopping_item_price"
+            style="@style/AppTextH6.GreyScale900.Bold"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/greyscale_600"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_shopping_item_title" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
