@@ -31,7 +31,6 @@ room = "2.6.1"
 
 # shimmer
 shimmer = "0.5.0"
-shimmer-recyclerview = "1.2.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -67,7 +66,6 @@ room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
 room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
 
 shimmer = { module = "com.facebook.shimmer:shimmer", version.ref = "shimmer" }
-shimmer-recyclerview = { module = "com.todkars:shimmer-recyclerview", version.ref = "shimmer-recyclerview" }
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

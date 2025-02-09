@@ -93,5 +93,5 @@ dependencies {
 
     //shimmer
     implementation(libs.shimmer)
-    implementation(libs.shimmer.recyclerview)
+
 }
