@@ -24,6 +24,7 @@ class HomeFragment : Fragment() {
     private val adapter = HomeShoppingItemAdapter(ShoppingItemComparator) { shoppingItem ->
         viewModel.onBookmarkButtonClick(shoppingItem)
     }
+    private val shimmerAdapter = ShimmerAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -46,8 +47,18 @@ class HomeFragment : Fragment() {
     }
 
     private fun setLayout() {
+        binding.rvShimmerList.adapter = shimmerAdapter
         binding.rvShoppingItemList.adapter = adapter
         viewModel.loadShoppingItems(getString(R.string.label_bag))
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.isLoading.collect { isLoading ->
+                    binding.isLoading = isLoading
+                }
+            }
+        }
+
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.items.collect { shoppingItems ->
