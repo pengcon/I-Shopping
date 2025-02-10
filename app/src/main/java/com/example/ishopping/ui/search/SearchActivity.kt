@@ -1,7 +1,6 @@
 package com.example.ishopping.ui.search
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Lifecycle
@@ -27,7 +26,6 @@ class SearchActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySearchBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        Log.d("SearchActivity", "onCreate: SearchActivity")
         observeSearchTextChanges()
         setupRecyclerView()
     }
