@@ -16,6 +16,9 @@ import javax.inject.Inject
 class HomeShoppingItemViewmodel @Inject constructor(private val repository: HomeRepository) :
     ViewModel() {
 
+    private val _isLoading = MutableStateFlow(true)
+    val isLoading = _isLoading.asStateFlow()
+
     private val _items = MutableStateFlow<List<ShoppingItem>>(emptyList())
     val items = _items.asStateFlow()
 
@@ -34,9 +37,11 @@ class HomeShoppingItemViewmodel @Inject constructor(private val repository: Home
     }
 
     fun loadShoppingItems(query: String) {
+        _isLoading.value = true
         viewModelScope.launch {
             val shoppingItems = repository.getShoppingItems(query)
             _items.value = shoppingItems
+            _isLoading.value = false
         }
     }
 
@@ -48,13 +53,13 @@ class HomeShoppingItemViewmodel @Inject constructor(private val repository: Home
         }
     }
 
-    fun addBookmark(shoppingItem: ShoppingItem) {
+    private fun addBookmark(shoppingItem: ShoppingItem) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.insertBookmarkItem(shoppingItem.copy(isBookmarked = true))
         }
     }
 
-    fun removeBookmark(shoppingItem: ShoppingItem) {
+    private fun removeBookmark(shoppingItem: ShoppingItem) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.deleteBookmarkItem(shoppingItem)
         }
