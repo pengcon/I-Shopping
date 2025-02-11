@@ -68,7 +68,8 @@ class HomeFragment : Fragment() {
         }
 
         binding.searchHomeLayout.setOnClickListener {
-            findNavController().navigate(R.id.action_navigation_home_to_searchFragment)
+            val action = HomeFragmentDirections.actionNavigationHomeToSearchActivity()
+            findNavController().navigate(action)
         }
     }
 }
