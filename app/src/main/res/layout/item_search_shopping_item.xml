@@ -48,7 +48,7 @@
 
         <TextView
             android:id="@+id/tv_shopping_item_title"
-            style="@style/AppTextH6.GreyScale900.Bold"
+            style="@style/AppShoppingItemTitle"
             title="@{shoppingItem.item.title}"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -62,7 +62,7 @@
 
         <TextView
             android:id="@+id/tv_shopping_item_price"
-            style="@style/AppTextH6.GreyScale900.Bold"
+            style="@style/AppShoppingItemPrice"
             price="@{shoppingItem.item.lowPrice}"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
