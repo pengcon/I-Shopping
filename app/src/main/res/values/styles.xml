@@ -42,7 +42,7 @@
     </style>
 
     <style name="AppTextH4.GreyScale900">
-        <item name="android:textSize">24sp</item>
+        <item name="android:color">@color/greyscale_900</item>
     </style>
 
     <style name="AppTextH4.GreyScale900.Bold">
@@ -80,4 +80,18 @@
     <style name="ShoppingItemRoundedImage">
         <item name="cornerSize">24dp</item>
     </style>
+
+    <style name="AppHomeGreeting" parent="AppTextBodyLarge.GreyScale600" />
+
+    <style name="AppHomeTitle" parent="AppTextH5.GreyScale900.Bold" />
+
+    <style name="AppHomeSpecialOffers" parent="AppTextH5.GreyScale900.Bold" />
+
+    <style name="AppHomeSuggestion" parent="AppTextH5.GreyScale900.Bold" />
+
+    <style name="AppShoppingItemTitle" parent="AppTextH6.GreyScale900.Bold" />
+
+    <style name="AppShoppingItemPrice" parent="AppTextH6.GreyScale900.Bold" />
+
+    <style name="AppBookmarkTitle" parent="AppTextH4.GreyScale900.Bold" />
 </resources>
