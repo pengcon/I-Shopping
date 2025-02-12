@@ -21,4 +21,9 @@
 
     <!--shimmer -->
     <string name="description_shimmer_shopping_item">검색 상품 스켈레톤</string>
+
+    <!--Setting -->
+    <string name="label_toolbar_setting">Mode Setting</string>
+
+
 </resources>
