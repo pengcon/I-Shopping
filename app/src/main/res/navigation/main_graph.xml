@@ -20,10 +20,10 @@
             app:destination="@id/navigation_search" />
     </fragment>
     <fragment
-        android:id="@+id/navigation_cart"
-        android:name="com.example.ishopping.ui.cart.CartFragment"
+        android:id="@+id/navigation_setting"
+        android:name="com.example.ishopping.ui.setting.SettingFragment"
         android:label="CartFragment"
-        tools:layout="@layout/fragment_cart" />
+        tools:layout="@layout/fragment_setting" />
 
     <activity
         android:id="@+id/navigation_search"
