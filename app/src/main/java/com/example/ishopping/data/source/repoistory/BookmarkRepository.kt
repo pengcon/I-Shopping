@@ -1,4 +1,4 @@
-package com.example.ishopping.data.source
+package com.example.ishopping.data.source.repoistory
 
 import com.example.ishopping.data.model.ShoppingItem
 import com.example.ishopping.data.source.local.ShoppingItemDao

@@ -7,7 +7,7 @@ import androidx.paging.cachedIn
 import androidx.paging.map
 import com.example.ishopping.data.model.Item
 import com.example.ishopping.data.model.ShoppingItem
-import com.example.ishopping.data.source.SearchRepository
+import com.example.ishopping.data.source.repoistory.SearchRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi

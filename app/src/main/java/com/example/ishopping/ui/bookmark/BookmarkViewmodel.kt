@@ -3,7 +3,7 @@ package com.example.ishopping.ui.bookmark
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.ishopping.data.model.ShoppingItem
-import com.example.ishopping.data.source.BookmarkRepository
+import com.example.ishopping.data.source.repoistory.BookmarkRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow

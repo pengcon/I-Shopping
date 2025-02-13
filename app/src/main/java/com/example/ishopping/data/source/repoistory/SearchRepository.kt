@@ -1,4 +1,4 @@
-package com.example.ishopping.data.source
+package com.example.ishopping.data.source.repoistory
 
 import androidx.paging.Pager
 import androidx.paging.PagingConfig

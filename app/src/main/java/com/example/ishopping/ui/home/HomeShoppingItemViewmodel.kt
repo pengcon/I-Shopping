@@ -3,7 +3,7 @@ package com.example.ishopping.ui.home
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.ishopping.data.model.ShoppingItem
-import com.example.ishopping.data.source.HomeRepository
+import com.example.ishopping.data.source.repoistory.HomeRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
