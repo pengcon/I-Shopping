@@ -32,6 +32,9 @@ room = "2.6.1"
 # shimmer
 shimmer = "0.5.0"
 
+# datastore
+datastore = "1.1.2"
+
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 
@@ -64,6 +67,8 @@ paging-runtime = { module = "androidx.paging:paging-runtime", version.ref = "pag
 room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
 room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
 room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
+
+datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastore" }
 
 shimmer = { module = "com.facebook.shimmer:shimmer", version.ref = "shimmer" }
 [plugins]
