@@ -16,7 +16,7 @@
 
         <TextView
             android:id="@+id/tv_home_greeting"
-            style="@style/AppTextBodyLarge.GreyScale600"
+            style="@style/AppHomeGreeting"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -30,7 +30,7 @@
 
         <TextView
             android:id="@+id/tv_home_title"
-            style="@style/AppTextH5.GreyScale900.Bold"
+            style="@style/AppHomeTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -52,7 +52,7 @@
 
         <TextView
             android:id="@+id/tv_home_special_offers"
-            style="@style/AppTextH5.GreyScale900.Bold"
+            style="@style/AppHomeSpecialOffers"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="24dp"
@@ -66,8 +66,7 @@
             android:layout_width="0dp"
             android:layout_height="180dp"
             android:layout_marginTop="24dp"
-            android:adjustViewBounds="true"
-            android:scaleType="centerCrop"
+            android:scaleType="center"
             android:src="@drawable/banner"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -76,7 +75,7 @@
 
         <TextView
             android:id="@+id/tv_home_suggestion"
-            style="@style/AppTextH5.GreyScale900.Bold"
+            style="@style/AppHomeSuggestion"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="24dp"

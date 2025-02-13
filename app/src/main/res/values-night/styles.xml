@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTextBodyXLarge">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="AppTextBodyXLarge.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="AppTextBodyXLarge.White.SemiBold">
+        <item name="android:fontFamily">@font/urbanist_semibold</item>
+    </style>
+
+    <style name="AppTextH4">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="AppTextH4.White">
+        <item name="android:color">@color/white</item>
+    </style>
+
+    <style name="AppTextH4.White.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AppTextH5">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="AppTextH5.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="AppTextH5.White.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AppTextH6">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="AppTextH6.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="AppTextH6.White.Bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AppHomeTitle" parent="AppTextH5.White.Bold" />
+
+    <style name="AppHomeSpecialOffers" parent="AppTextH5.White.Bold" />
+
+    <style name="AppHomeSuggestion" parent="AppTextH5.White.Bold" />
+
+    <style name="AppShoppingItemTitle" parent="AppTextH6.White.Bold" />
+
+    <style name="AppShoppingItemPrice" parent="AppTextH6.White.Bold" />
+
+    <style name="AppTitle" parent="AppTextH4.White.Bold" />
+
+    <style name="AppSettingItem" parent="AppTextBodyXLarge.White.SemiBold" />
+</resources>

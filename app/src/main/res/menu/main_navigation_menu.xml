@@ -5,11 +5,12 @@
         android:icon="@drawable/selector_home_icon"
         android:title="@string/label_home" />
     <item
-        android:id="@+id/navigation_cart"
-        android:icon="@drawable/selector_cart_icon"
-        android:title="@string/label_cart" />
-    <item
         android:id="@+id/navigation_like"
         android:icon="@drawable/selector_like_icon"
         android:title="@string/label_like" />
+    <item
+        android:id="@+id/navigation_setting"
+        android:icon="@drawable/selector_setting_icon"
+        android:title="@string/label_setting" />
+
 </menu>
