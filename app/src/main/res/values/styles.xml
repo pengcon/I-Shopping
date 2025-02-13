@@ -25,6 +25,18 @@
         <item name="android:textColor">@color/greyscale_600</item>
     </style>
 
+    <style name="AppTextBodyXLarge">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="AppTextBodyXLarge.GreyScale800">
+        <item name="android:color">@color/greyscale_800</item>
+    </style>
+
+    <style name="AppTextBodyXLarge.GreyScale800.SemiBold">
+        <item name="android:fontFamily">@font/urbanist_semibold</item>
+    </style>
+
     <style name="AppTextH2">
         <item name="android:textSize">40sp</item>
     </style>
@@ -83,6 +95,8 @@
 
     <style name="AppHomeGreeting" parent="AppTextBodyLarge.GreyScale600" />
 
+    <style name="AppTitle" parent="AppTextH4.GreyScale900.Bold" />
+
     <style name="AppHomeTitle" parent="AppTextH5.GreyScale900.Bold" />
 
     <style name="AppHomeSpecialOffers" parent="AppTextH5.GreyScale900.Bold" />
@@ -93,5 +107,5 @@
 
     <style name="AppShoppingItemPrice" parent="AppTextH6.GreyScale900.Bold" />
 
-    <style name="AppBookmarkTitle" parent="AppTextH4.GreyScale900.Bold" />
+    <style name="AppSettingItem" parent="AppTextBodyXLarge.GreyScale800.SemiBold" />
 </resources>

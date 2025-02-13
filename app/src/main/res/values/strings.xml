@@ -24,6 +24,9 @@
 
     <!--Setting -->
     <string name="label_toolbar_setting">Mode Setting</string>
+    <string name="label_dark_mode">다크 모드</string>
+    <string name="label_white_mode">화이트 모드</string>
+    <string name="label_system_mode">시스템 설정과 같이</string>
 
 
 </resources>

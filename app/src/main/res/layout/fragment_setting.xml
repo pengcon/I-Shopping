@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -22,7 +21,7 @@
 
             <TextView
                 android:id="@+id/tv_toolbar_like"
-                style="@style/AppBookmarkTitle"
+                style="@style/AppTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -46,18 +45,19 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:text="@string/label_dark_mode"
+                style="@style/AppSettingItem"
                 app:layout_constraintBottom_toBottomOf="@id/switch_dark_mode"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/switch_dark_mode"
-                tools:text="다크 모드" />
+                app:layout_constraintTop_toTopOf="@id/switch_dark_mode" />
 
             <com.google.android.material.switchmaterial.SwitchMaterial
                 android:id="@+id/switch_dark_mode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:clickable="false"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/layout_dark_mode"
-                android:clickable="false"/>
+                app:layout_constraintTop_toTopOf="@id/layout_dark_mode" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -77,18 +77,19 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                style="@style/AppSettingItem"
+                android:text="@string/label_white_mode"
                 app:layout_constraintBottom_toBottomOf="@id/switch_white_mode"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/switch_white_mode"
-                tools:text="화이트 모드" />
+                app:layout_constraintTop_toTopOf="@id/switch_white_mode" />
 
             <com.google.android.material.switchmaterial.SwitchMaterial
                 android:id="@+id/switch_white_mode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:clickable="false"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/layout_white_mode"
-                android:clickable="false"/>
+                app:layout_constraintTop_toTopOf="@id/layout_white_mode" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -109,18 +110,19 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                style="@style/AppSettingItem"
+                android:text="@string/label_system_mode"
                 app:layout_constraintBottom_toBottomOf="@id/switch_system_mode"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/switch_system_mode"
-                tools:text="시스템 모드" />
+                app:layout_constraintTop_toTopOf="@id/switch_system_mode" />
 
             <com.google.android.material.switchmaterial.SwitchMaterial
                 android:id="@+id/switch_system_mode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:clickable="false"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/layout_system_mode"
-                android:clickable="false"/>
+                app:layout_constraintTop_toTopOf="@id/layout_system_mode" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

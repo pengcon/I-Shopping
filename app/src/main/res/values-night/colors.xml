@@ -5,6 +5,7 @@
     <color name="dark_2">#FF1F222A</color>
     <color name="greyscale_400">#FFBDBDBD</color>
     <color name="greyscale_600">#FF757575</color>
+    <color name="greyscale_800">#FF424242</color>
     <color name="greyscale_900">#FF212121</color>
     <color name="searchLayoutBackgroundColor">@color/dark_2</color>
     <color name="bottomNavigationColor">@color/dark</color>

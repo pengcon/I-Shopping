@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <style name="AppTextBodyXLarge">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="AppTextBodyXLarge.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="AppTextBodyXLarge.White.SemiBold">
+        <item name="android:fontFamily">@font/urbanist_semibold</item>
+    </style>
+
     <style name="AppTextH4">
         <item name="android:textSize">24sp</item>
     </style>
@@ -47,5 +59,7 @@
 
     <style name="AppShoppingItemPrice" parent="AppTextH6.White.Bold" />
 
-    <style name="AppBookmarkTitle" parent="AppTextH4.White.Bold" />
+    <style name="AppTitle" parent="AppTextH4.White.Bold" />
+
+    <style name="AppSettingItem" parent="AppTextBodyXLarge.White.SemiBold" />
 </resources>
