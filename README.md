@@ -14,7 +14,7 @@
 | <img src = "https://github.com/user-attachments/assets/1a7be7b3-7437-4b11-903c-b205e4711bbb" width="252" height="560"> | <img src = "https://github.com/user-attachments/assets/a19cd48f-ffba-47e1-bfb1-e6f257fc3623" width="252" height="560">
 
 
-# 📚 기술 스택
+## 📚 기술 스택
 
 | Category | TechStack | 
 | --- | --- |
@@ -27,7 +27,7 @@
 | Data Storage | Room, DataStore |
 | Design | Figma |
 
-### 프로젝트 진행 기록
+## 📄 프로젝트 진행 기록
 
 [주제와 기술적 도전 기획](https://codinghun.tistory.com/36)
 
