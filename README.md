@@ -22,7 +22,7 @@
 | DI | Hilt  |
 | Network | Retrofit, OkHttp, Gson  |
 | Asynchronous | Coroutines, Flow   |
-| UI/UX | Xml, Navigation   |
+| UI/UX | Xml, Navigation,DataBinding   |
 | Image | Glide  |
 | Data Storage | Room, DataStore |
 | Design | Figma |
