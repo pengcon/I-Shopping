@@ -1,9 +1,31 @@
-# Ishopping
-<img width="270" height="600" alt="" src="https://github.com/user-attachments/assets/3f2b8d26-b0fd-42ca-9d50-cae3ef89576a" />
+# I-Shopping
 
-[Screen_recording_20250131_151228.webm](https://github.com/user-attachments/assets/5e2772d0-6952-428d-b565-7f8185d5f833)
 
-개발 역량 상승과 기술적 학습을 위해서 개인 프로젝트를 진행중입니다!
+### 🎨 UI 구성 및 다크 모드 대응
+
+|                                                        홈 화면 UI                                                        |                                                        다크 테마 변경                                                       |                                                       시스템 테마 변경                                                        |
+|:----------------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------------:|
+| <img src = "https://github.com/user-attachments/assets/9c17b98a-6f14-418d-8a11-e324a51e1c0b" width="252" height="560"> | <img src = "https://github.com/user-attachments/assets/030f3c8a-87fc-4e14-ba49-2e2ed2d288ca" width="252" height="560"> | <img src = "https://github.com/user-attachments/assets/5fab0e42-7487-4e03-af54-004987c07ea5" width="252" height="560">
+
+### 🔍 검색 및 북마크
+
+|                                                         쇼핑 API 검색                                                         |                                                        상품 북마크                                                        |
+|:----------------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------------:|
+| <img src = "https://github.com/user-attachments/assets/1a7be7b3-7437-4b11-903c-b205e4711bbb" width="252" height="560"> | <img src = "https://github.com/user-attachments/assets/a19cd48f-ffba-47e1-bfb1-e6f257fc3623" width="252" height="560">
+
+
+# 📚 기술 스택
+
+| Category | TechStack | 
+| --- | --- |
+| Architecture |  MVVM   |
+| DI | Hilt  |
+| Network | Retrofit, OkHttp, Gson  |
+| Asynchronous | Coroutines, Flow   |
+| UI/UX | Xml, Navigation   |
+| Image | Glide  |
+| Data Storage | Room, DataStore |
+| Design | Figma |
 
 ### 프로젝트 진행 기록
 
