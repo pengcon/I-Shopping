@@ -23,7 +23,7 @@ class SettingRepository @Inject constructor(private val dataStore: DataStore<Pre
         }
     }
 
-    suspend fun flowDarkModeIds(): Flow<Int> = dataStore.data
+    fun flowDarkModeIds(): Flow<Int> = dataStore.data
         .catch { exception ->
             if (exception is IOException) {
                 Log.e(TAG, "Error reading dark mode id preferences.", exception)

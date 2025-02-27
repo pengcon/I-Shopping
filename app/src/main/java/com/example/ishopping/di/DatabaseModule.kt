@@ -22,7 +22,7 @@ object DatabaseModule {
             "ishopping-db"
         ).build()
     }
-    
+
     @Provides
-    fun provideBookmarkItemDao(appDatabase: AppDatabase) = appDatabase.bookmarkItemDao()
+    fun provideBookmarkItemDao(appDatabase: AppDatabase) = appDatabase.shoppingItemDao()
 }

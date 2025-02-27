@@ -20,11 +20,11 @@ class HomeRepository @Inject constructor(
         return dao.getAll()
     }
 
-    fun insertBookmarkItem(item: ShoppingItem) {
+    suspend fun insertBookmarkItem(item: ShoppingItem) {
         dao.insert(item)
     }
 
-    fun deleteBookmarkItem(item: ShoppingItem) {
+    suspend fun deleteBookmarkItem(item: ShoppingItem) {
         dao.delete(item)
     }
 }

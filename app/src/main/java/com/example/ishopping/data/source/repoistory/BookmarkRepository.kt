@@ -6,5 +6,5 @@ import javax.inject.Inject
 
 class BookmarkRepository @Inject constructor(private val dao: ShoppingItemDao) {
     fun getAllBookmarkItems() = dao.getAll()
-    fun deleteBookmarkItem(item: ShoppingItem) = dao.delete(item)
+    suspend fun deleteBookmarkItem(item: ShoppingItem) = dao.delete(item)
 }

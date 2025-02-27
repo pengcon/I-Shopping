@@ -9,5 +9,5 @@ import com.example.ishopping.util.converters.ShoppingItemTypeConverter
 @Database(entities = [ShoppingItem::class], version = 2)
 @TypeConverters(ShoppingItemTypeConverter::class)
 abstract class AppDatabase : RoomDatabase() {
-    abstract fun bookmarkItemDao(): ShoppingItemDao
+    abstract fun shoppingItemDao(): ShoppingItemDao
 }

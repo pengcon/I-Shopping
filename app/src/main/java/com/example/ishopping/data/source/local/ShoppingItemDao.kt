@@ -10,14 +10,14 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface ShoppingItemDao {
     @Insert
-    fun insert(shoppingItem: ShoppingItem)
+    suspend fun insert(shoppingItem: ShoppingItem)
 
     @Delete
-    fun delete(shoppingItem: ShoppingItem)
+    suspend fun delete(shoppingItem: ShoppingItem)
 
     @Query("SELECT * FROM bookmark_items")
     fun getAll(): Flow<List<ShoppingItem>>
 
     @Query("DELETE FROM bookmark_items")
-    fun deleteAllBookmarkItems()
+    suspend fun deleteAllBookmarkItems()
 }
