@@ -38,3 +38,7 @@
 [네트워크 통신 라이브러리 사용 고찰](https://codinghun.tistory.com/50)
 
 [Paging 학습 및 프로젝트 적용](https://codinghun.tistory.com/65)
+
+[Flow debounce와 프로젝트 적용(검색 기능 api 호출 최적화)](https://codinghun.tistory.com/70)
+
+[Room을 활용한 쇼핑 상품 북마크 기능 (기능 구현 과정)](https://codinghun.tistory.com/77)
